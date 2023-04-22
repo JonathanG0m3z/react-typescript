@@ -1,4 +1,4 @@
-import { RandomFox } from "@/components/RandomFox";
+import { LazyImage } from "@/components/RandomFox";
 import { MouseEventHandler, useState } from "react";
 
 const random = (): number => Math.floor(Math.random() * 123) + 1;
@@ -25,7 +25,7 @@ export default function Home(): JSX.Element {
         </button>
         {images.map((item)=>
         <div key={item.id} className="p-4">
-          <RandomFox image={item.url} />
+          <LazyImage src={item.url} onClick={()=>console.log("hey")} title="Random fox" />
         </div>
         )}
       </main>
